@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #000000;
+  --color-secondary: #ffffff;
+  --color-accent: #0071e3;
+  /* Apple Blue */
+  --color-muted: #86868b;
+  --color-surface: #f5f5f7;
+}
+
+@layer base {
+  html {
+    @apply antialiased scroll-smooth;
+    font-family: var(--font-sans);
+  }
+
+  body {
+    @apply bg-white text-black overflow-x-hidden;
+  }
+
+  ::selection {
+    @apply bg-accent/20 text-accent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glass {
+    @apply backdrop-blur-md bg-white/70 border border-white/20;
+  }
+
+  .premium-gradient {
+    background: radial-gradient(circle at center, #ffffff 0%, #f5f5f7 100%);
+  }
+}
